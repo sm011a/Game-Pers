@@ -221,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioStart: {fileID: 8300000, guid: 89a567b2d5e413b4bb75067e5b4ab749, type: 3}
   audioExit: {fileID: 8300000, guid: 6559a68a5417bff47807680f3e63c069, type: 3}
+  oneClick: 0
 --- !u!82 &185126594
 AudioSource:
   m_ObjectHideFlags: 0

@@ -7,22 +7,19 @@ public class LevelManager : MonoBehaviour
     public AudioClip audioStart;
     public AudioClip audioExit;
 
+    public bool oneClick;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
-
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !oneClick)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            oneClick = false;
+            SceneManager.LoadScene(1);
             audioSource.PlayOneShot(audioStart, 0.7f);
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            audioSource.PlayOneShot(audioExit, 0.7f);
         }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
